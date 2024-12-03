@@ -21,7 +21,6 @@ class MainActivity2 : AppCompatActivity() {
                         View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 )
 
-        // Apply window insets to the view
         val textView: View = findViewById(R.id.textView)
         ViewCompat.setOnApplyWindowInsetsListener(textView) { v, insets ->
             val systemBars: Insets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
