@@ -1,0 +1,2 @@
+Hello, this is a file I/O example in Java.
+File handling is simple and powerful!
