@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class AddNoteActivity extends AppCompatActivity {
-    private EditText etTitle, etContent;
+    private EditText etTitle, etDescription, etContent;
     private Button btnSave;
 
     @Override
@@ -21,6 +21,7 @@ public class AddNoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_note);
 
         etTitle = findViewById(R.id.etTitle);
+        etDescription = findViewById(R.id.etDescription);
         etContent = findViewById(R.id.etContent);
         btnSave = findViewById(R.id.btnSave);
 
@@ -34,6 +35,7 @@ public class AddNoteActivity extends AppCompatActivity {
 
     private void saveNote() {
         String title = etTitle.getText().toString().trim();
+        String description = etDescription.getText().toString().trim();
         String content = etContent.getText().toString().trim();
 
         if (TextUtils.isEmpty(title)) {
@@ -47,6 +49,7 @@ public class AddNoteActivity extends AppCompatActivity {
             public void run() {
                 Note note = new Note();
                 note.setTitle(title);
+                note.setDescription(description);
                 note.setContent(content);
                 note.setSummary(""); // optional, for future AI summary
 
